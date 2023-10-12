@@ -5,6 +5,18 @@ import java.util.List;
 import java.util.Random;
 
 public class Main {
+
+    // used for exercise 3
+    public static ArrayList<Integer> generateRandomIntegerArray(int size){
+        Random randomNumber = new Random();
+        ArrayList<Integer> intArray = new ArrayList<Integer>();
+        for (int i=0; i< size; i++ ){
+            intArray.add(randomNumber.nextInt(100));
+        }
+
+        return intArray;
+    }
+
     public static void main(String[] args) {
         /*
          * CPRG304F Lab2 - Comparable and Comparator Interfaces
@@ -102,28 +114,28 @@ public class Main {
                 """);
 
 
-        //1. create a sorted array of integers
-        ArrayList<Integer> intArray = new ArrayList<Integer>();
+        //1. create an array of integers
+        ArrayList<Integer> intArray = generateRandomIntegerArray(7);
 
-        Random randomNumber = new Random();
-        for (int i=0; i< 8; i++ ){
-            intArray.add(randomNumber.nextInt(100));
-        }
         System.out.println("------------Unsorted Integer array");
         System.out.println(intArray);
 
-        //sort and apply binary search
+        //2. sort and apply binary search
         Collections.sort(intArray);
         System.out.println("------------sorted Integer array");
         System.out.println(intArray);
+
+        //3. apply binary search
         System.out.println("------------Given a random value, find it in the array");
         BinarySearch bs = new BinarySearch();
+        Random randomNumber = new Random();
         int targetVal = randomNumber.nextInt(100);
+
         System.out.println("target value: "+targetVal);
         int targetIndex = bs.binarySearch(intArray,targetVal);
         System.out.println("target index: "+targetIndex);
 
-        // try finding one that actually is there
+        //4. try finding one that actually is there
         System.out.println("------------finding the last value of the array");
         int targetVal2 = intArray.get(intArray.size()-1);
         System.out.println("target value: "+targetVal2);
@@ -135,17 +147,35 @@ public class Main {
 
 
         //////// Exercise 3 ///////////////////////////////////////////////////////////////////////////////////
-        /*
+        /* write a program that sorts an array of integers
+         * using one of the four: bubble sort, quick sort, insertion sort or selection sort
+         * print the array before and after the sort
          *
          *
-         *
-         *
-         *
+         * The class ArraySorter will have methods corresponding to the four different ways to sort
          */
         System.out.print("""
                 -------------------| EXERCISE 3 |----------------------------------------------------------------
 
                 """);
+
+
+        // initialize ArraySorter
+        ArraySorter arraysorter = new ArraySorter();
+
+
+        // bubble sort
+        System.out.println("------------Sort by bubble sort");
+        ArrayList<Integer> intArray2 = generateRandomIntegerArray(5);
+
+        arraysorter.bubbleSort(intArray2);
+
+        // selection sort
+        System.out.println("------------Sort by selection sort");
+        ArrayList<Integer> intArray3 = generateRandomIntegerArray(5);
+        arraysorter.selectionSort(intArray3);
+
+
 
 
     }// end of main function
