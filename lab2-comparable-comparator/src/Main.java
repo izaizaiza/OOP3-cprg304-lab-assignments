@@ -176,6 +176,15 @@ public class Main {
         arraysorter.selectionSort(intArray3);
 
 
+        // quick sort
+        System.out.println("------------Sort by selection sort");
+        ArrayList<Integer> intArray4 = generateRandomIntegerArray(5);
+        System.out.println("Array BEFORE quick sort: " + intArray4);
+        arraysorter.quickSort(intArray4, 0, intArray4.size()-1);
+        System.out.println("Array AFTER quick sort: " + intArray4);
+
+
+
 
 
     }// end of main function

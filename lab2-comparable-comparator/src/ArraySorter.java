@@ -99,16 +99,63 @@ public class ArraySorter {
 
 
     // quick sort
-    public void quickSort(ArrayList<Integer> intArray){
+    public void quickSort(ArrayList<Integer> intArray, int startIndex, int endIndex){
         /*
         * algorithm:
-        * 1. choose the middle element or close to middle element to be the pivot element
+        * 1. choose an element to be the pivot element
         * 2. divide the array into two: one for elements less than the pivot and the other for elements
         * greater of the pivot element
         * 3.  keep doing it to the sub arrays until the entire original array is sorted
         * 4. divide and sort, divide and sort,...
-        * 5.
+        * 5. since there will be sub arrays that are to be sorted, we must create another function
+        * to deal with the sub arrays?
         * */
+
+        //print array list before sorting
+        //System.out.println("Array BEFORE quick sort: " + intArray);
+
+        //check that the array list has more than one element
+        if (startIndex < endIndex){
+            int pivotIndex = divideGetPivotIndex(intArray, startIndex, endIndex);
+            // sort the elements before or left of the pivotIndex
+            quickSort(intArray, startIndex, pivotIndex - 1);
+
+            // sort the elements after or right of the pivotIndex
+            quickSort(intArray, pivotIndex + 1, endIndex);
+        }
+
+
+        //print sorted array
+        //System.out.println("Array AFTER quick sort: " + intArray);
+
+
+
+    }
+
+
+    // quick sort needs a helper function to divide the sub array and choose a pivot
+    public int divideGetPivotIndex(ArrayList<Integer> intArray, int startIndex, int endIndex){
+        int pivotValue = intArray.get(endIndex);
+        int smallerIndex = startIndex - 1;
+
+        // go through the array and compare pivotValue to the other elements
+        for (int index = startIndex; index < endIndex; index++){
+            if (intArray.get(index) < pivotValue){
+                smallerIndex += 1;
+                // swap elements
+                int valOnHold = intArray.get(smallerIndex);
+                int currentIndexValue = intArray.get(index);
+                intArray.set(smallerIndex, currentIndexValue);
+                intArray.set(index, valOnHold);
+            }
+
+        }
+
+        int valOnHold = intArray.get(smallerIndex + 1);
+        intArray.set(smallerIndex + 1, intArray.get(endIndex));
+        intArray.set(endIndex, valOnHold);
+
+        return smallerIndex + 1;
     }
 
 }// end of ArraySorter class
