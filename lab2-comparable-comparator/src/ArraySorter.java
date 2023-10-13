@@ -10,6 +10,9 @@ public class ArraySorter {
     //constructor
     public ArraySorter(){}
 
+    //swap function to be used in the sort methods
+    //public void static swap()
+
 
     //bubble sort
     public void bubbleSort(ArrayList<Integer> intArray){
@@ -135,6 +138,11 @@ public class ArraySorter {
 
     // quick sort needs a helper function to divide the sub array and choose a pivot
     public int divideGetPivotIndex(ArrayList<Integer> intArray, int startIndex, int endIndex){
+
+        //int medianIndex =  (int)Math.floor((double)(endIndex - startIndex)/2);
+        //int pivotValue = intArray.get(medianIndex);
+        //picked the last index so that the sub arrays are gonna get created based on the elements
+        // left of the pivot
         int pivotValue = intArray.get(endIndex);
         int smallerIndex = startIndex - 1;
 
