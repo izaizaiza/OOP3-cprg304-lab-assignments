@@ -167,23 +167,29 @@ public class Main {
 
 
         // bubble sort
-        //System.out.println("------------Sort by bubble sort");
-        //ArrayList<Integer> intArray2 = generateRandomIntegerArray(5);
-
-        //arraysorter.bubbleSort(intArray2);
+        System.out.println("------------Sort by bubble sort");
+        ArrayList<Integer> intArray2 = generateRandomIntegerArray(5);
+        arraysorter.bubbleSort(intArray2);
 
         // selection sort
-        //System.out.println("------------Sort by selection sort");
-        //ArrayList<Integer> intArray3 = generateRandomIntegerArray(5);
-        //arraysorter.selectionSort(intArray3);
+        System.out.println("------------Sort by selection sort");
+        ArrayList<Integer> intArray3 = generateRandomIntegerArray(5);
+        arraysorter.selectionSort(intArray3);
 
 
         // quick sort
-        //System.out.println("------------Sort by selection sort");
-        //ArrayList<Integer> intArray4 = generateRandomIntegerArray(5);
-        //System.out.println("Array BEFORE quick sort: " + intArray4);
-        //arraysorter.quickSort(intArray4, 0, intArray4.size()-1);
-        //System.out.println("Array AFTER quick sort: " + intArray4);
+        System.out.println("------------Sort by selection sort");
+        ArrayList<Integer> intArray4 = generateRandomIntegerArray(5);
+        System.out.println("Array BEFORE quick sort: " + intArray4);
+        arraysorter.quickSort(intArray4, 0, intArray4.size()-1);
+        System.out.println("Array AFTER quick sort: " + intArray4);
+
+        ////////
+        System.out.println("--------------------choose a sorting algorithm");
+        // ask for user input
+        // first print the array
+        ArrayList<Integer> intArray5 = generateRandomIntegerArray(8);
+        System.out.println("Given the array: " + intArray5);
 
         Scanner scanner = new Scanner(System.in);
         // ask for input which sort to do
@@ -200,20 +206,17 @@ public class Main {
         if (choice == 1){
             // bubble sort
             System.out.println("------------Sort by bubble sort");
-            ArrayList<Integer> intArray2 = generateRandomIntegerArray(5);
-            arraysorter.bubbleSort(intArray2);
+            arraysorter.bubbleSort(intArray5);
         }
         else if (choice == 2){
             System.out.println("------------Sort by selection sort");
-            ArrayList<Integer> intArray3 = generateRandomIntegerArray(5);
-            arraysorter.selectionSort(intArray3);
+            arraysorter.selectionSort(intArray5);
         }
         else if (choice == 3){
             System.out.println("------------Sort by selection sort");
-            ArrayList<Integer> intArray4 = generateRandomIntegerArray(5);
-            System.out.println("Array BEFORE quick sort: " + intArray4);
-            arraysorter.quickSort(intArray4, 0, intArray4.size()-1);
-            System.out.println("Array AFTER quick sort: " + intArray4);
+            System.out.println("Array BEFORE quick sort: " + intArray5);
+            arraysorter.quickSort(intArray5, 0, intArray5.size()-1);
+            System.out.println("Array AFTER quick sort: " + intArray5);
         }
         else{
             System.out.println("Entered number is not recognized");
