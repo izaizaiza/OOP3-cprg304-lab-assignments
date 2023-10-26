@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OOP3-cprg304-lab-assignments.iml" filepath="$PROJECT_DIR$/OOP3-cprg304-lab-assignments.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lab3-abstract-data-types/lab3-abstract-data-types.iml" filepath="$PROJECT_DIR$/lab3-abstract-data-types/lab3-abstract-data-types.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab3-abstract-data-types/module/module.iml" filepath="$PROJECT_DIR$/lab3-abstract-data-types/module/module.iml" />
     </modules>
   </component>
 </project>
