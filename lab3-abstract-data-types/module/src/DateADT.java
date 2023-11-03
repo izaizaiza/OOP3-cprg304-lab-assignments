@@ -8,14 +8,6 @@ public interface DateADT {
     //abstract methods
 
     /**
-     * create  a date object
-     * @param y year
-     * @param m month
-     * @param d day
-     * */
-   DateADT createDate(int y, int m, int d);
-
-    /**
      * get the year of a dateADT
      * @return an int that is the year
      */
@@ -74,17 +66,15 @@ public interface DateADT {
     /**
      * format the date into: yyyy-mm-dd
      * @return a string: "yyyy-mm-dd"
-     * @param date object
      */
-    String formatDate1(DateADT date);
+    String formatDate1();
 
     /**
      * adjust days to a date and get new date (either in the past or future)
-     * @param date chosen date
      * @param numDays is number of days; can be positive or negative int
      * @return the new date
      */
-    DateADT adjustDays(DateADT date, int numDays);
+    DateADT adjustDays(int numDays);
 
 
 }
