@@ -27,20 +27,19 @@ public class DLL<E> implements Iterable<E> {
     }
 
     public void addFirst(E item) {
-        Node<E> newNode = new Node<>(item);
+        //create a node that takes the item and add it to the first of dll
+        Node<E> newNode = new Node(item);
         if (isEmpty()) {
-            head = newNode;
             tail = newNode;
         } else {
-            newNode.next = head;
             head.prev = newNode;
-            head = newNode;
         }
+        head = newNode;
         size++;
     }
 
     public void addLast(E item) {
-        Node<E> newNode = new Node<>(item);
+        Node<E> newNode = new Node<E>(item);
         if (isEmpty()) {
             head = newNode;
             tail = newNode;
